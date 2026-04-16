@@ -156,3 +156,26 @@ curl -fsSL https://ollama.com/install.sh | sh
 Refer to the official Ollama documentation for licensing and usage terms.
 
 ---
+
+## 🤖 Ollama Models vs Server Specs
+| Model              | Min RAM | Recommended RAM | GPU Needed  | Disk Space | Best Use Case                   | Notes                           |
+| ------------------ | ------: | --------------: | ----------- | ---------- | ------------------------------- | ------------------------------- |
+| **phi**            |    2 GB |            4 GB | ❌ No        | ~2 GB      | Lightweight tasks, testing      | Very fast, limited reasoning    |
+| **tinyllama**      |    2 GB |            4 GB | ❌ No        | ~2 GB      | Ultra-low resource environments | Basic chat only                 |
+| **gemma:2b**       |    4 GB |            8 GB | ❌ No        | ~3 GB      | Small apps, APIs                | Efficient Google model          |
+| **mistral**        |    6 GB |         8–12 GB | ❌ Optional  | ~4–5 GB    | General-purpose                 | Best balance of speed & quality |
+| **llama2**         |    8 GB |        12–16 GB | ❌ Optional  | ~7 GB      | Stable workloads                | Older but reliable              |
+| **llama3**         |   12 GB |        16–24 GB | ⚠️ Optional | ~8–12 GB   | High-quality chat & reasoning   | Recommended default             |
+| **mixtral**        |   16 GB |        24–32 GB | ✅ Yes       | ~20+ GB    | Advanced reasoning              | Heavy but powerful              |
+| **codellama**      |   12 GB |        16–24 GB | ⚠️ Optional | ~10 GB     | Code generation                 | Great for dev servers           |
+| **deepseek-coder** |   12 GB |        16–24 GB | ⚠️ Optional | ~10–15 GB  | Coding + reasoning              | Strong alternative to CodeLlama |
+| **nous-hermes**    |   12 GB |        16–24 GB | ⚠️ Optional | ~10 GB     | Chat + reasoning                | Fine-tuned LLaMA                |
+
+## 🖥️ Server Tier Recommendations
+| Server Type          | Specs                       | Recommended Models |
+| -------------------- | --------------------------- | ------------------ |
+| **Low-end VM**       | 2–4 GB RAM, CPU only        | phi, tinyllama     |
+| **Small server**     | 8 GB RAM, CPU               | gemma, mistral     |
+| **Mid-range server** | 16 GB RAM, CPU/GPU optional | llama3, codellama  |
+| **High-performance** | 32 GB+ RAM + GPU            | mixtral, deepseek  |
+
